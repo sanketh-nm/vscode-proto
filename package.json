@@ -2,19 +2,20 @@
   "name": "vscode-proto",
   "displayName": "vscode-proto",
   "description": "proto3 support for vscode",
-  "version": "0.0.2",
-  "publisher": "sanketh",
+  "version": "0.0.3",
+  "publisher": "sankethdev",
   "engines": {
     "vscode": "^1.70.0"
   },
   "license": "MIT: LICENSE.txt",
   "icon": "images/proto3.png",
+  "homepage": "https://github.com/sanketh-nm/vscode-proto/blob/master/README.md",
   "repository": {
     "type": "git",
     "url": "https://github.com/sanketh-nm/vscode-proto"
   },
   "categories": [
-    "Other"
+    "Programming Languages"
   ],
   "activationEvents": [
     "onLanguage:proto3"
