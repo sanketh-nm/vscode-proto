@@ -5,8 +5,8 @@ import path = require("path");
 import vscode = require("vscode");
 import fg = require("fast-glob");
 // import { guessScope, Proto3ScopeKind } from './proto3ScopeGuesser';
-import { Proto3Import } from "./proto3.imports";
-import { PrimitiveTypes } from './proto3.primitiveTypes';
+import { Proto3Import } from "./helpers/proto3.importStatmentParser";
+import { PrimitiveTypes } from './helpers/proto3.primitiveTypes';
 
 export class Proto3DefinitionProvider implements vscode.DefinitionProvider {
   public async provideDefinition(

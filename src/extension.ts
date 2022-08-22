@@ -8,6 +8,8 @@ import { Proto3LanguageDiagnosticProvider } from "./protoc.diagnostics";
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
+	
+	console.log('activated');
 
 	const PROTO3_MODE: vscode.DocumentFilter = {
 			language: 'proto3',
@@ -57,16 +59,6 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 });
 
-
-
-  console.log('Congratulations, your extension "vscode-proto" is now active!');
-  let disposable = vscode.commands.registerCommand(
-    "vscode-proto.helloWorld",
-    () => {
-      vscode.window.showInformationMessage("Hello World from vscode-proto!");
-    }
-  );
-
 	vscode.workspace.onDidChangeTextDocument(event => {
 		if (event.document.fileName.split('.')[1] === 'proto') {
 			console.log('triggred')
@@ -75,7 +67,6 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 });
 
-  context.subscriptions.push(disposable);
 }
 
 // this method is called when your extension is deactivated

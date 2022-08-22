@@ -2,26 +2,25 @@
   "name": "vscode-proto",
   "displayName": "vscode-proto",
   "description": "proto3 support for vscode",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "publisher": "sanketh",
   "engines": {
     "vscode": "^1.70.0"
+  },
+  "license": "MIT: LICENSE.txt",
+  "icon": "images/proto3.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanketh-nm/vscode-proto"
   },
   "categories": [
     "Other"
   ],
   "activationEvents": [
-    "onLanguage:proto3",
-    "onCommand:proto3.compile.one",
-    "onCommand:proto3.compile.all"
+    "onLanguage:proto3"
   ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "vscode-proto.helloWorld",
-        "title": "Hello World"
-      }
-    ],
     "languages": [
       {
         "id": "proto3",
@@ -57,16 +56,19 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.70.0",
     "@types/glob": "^7.2.0",
     "@types/mocha": "^9.1.1",
     "@types/node": "16.x",
+    "@types/vscode": "^1.70.0",
     "@typescript-eslint/eslint-plugin": "^5.31.0",
     "@typescript-eslint/parser": "^5.31.0",
+    "@vscode/test-electron": "^2.1.5",
     "eslint": "^8.20.0",
     "glob": "^8.0.3",
     "mocha": "^10.0.0",
-    "typescript": "^4.7.4",
-    "@vscode/test-electron": "^2.1.5"
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "fast-glob": "^3.2.11"
   }
 }
