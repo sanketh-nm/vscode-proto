@@ -4,7 +4,7 @@ Proto3 support for VSCode
 
 ## Features
 
-![name](images/extention-show.mov)
+![name](images/extention-show.gif)
 
 - syntax highlighting.
 - syntax validation.
