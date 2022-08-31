@@ -7,4 +7,4 @@ All notable changes to the "vscode-proto" extension will be documented in this f
 - Initial release
 
 ## [0.0.4]
-- fix an issue where definitiosn were trying to read cuurrent directory as a file.
+- Fix an issue where clicking the definition was trying to read current directory as a file.
