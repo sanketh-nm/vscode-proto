@@ -2,7 +2,7 @@
   "name": "vscode-proto",
   "displayName": "vscode-proto",
   "description": "proto3 support for vscode",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "sankethdev",
   "engines": {
     "vscode": "^1.70.0"

@@ -23,7 +23,7 @@ export class Proto3DefinitionProvider implements vscode.DefinitionProvider {
 
     // no definition for primitive types
     if (PrimitiveTypes.isPrimitiveType(targetDefinition)) {
-        return;
+      return;
     }
 
     const lineText = document.lineAt(position).text;
@@ -71,9 +71,6 @@ export class Proto3DefinitionProvider implements vscode.DefinitionProvider {
       if (location) {
         return location;
       }
-      vscode.window.showErrorMessage(
-        `Could not find ${targetDefinition} definition.`
-      );
     }
 
     return undefined;
@@ -82,11 +79,10 @@ export class Proto3DefinitionProvider implements vscode.DefinitionProvider {
   private async findEnumOrMessageDefinition(
     document: vscode.TextDocument,
     target: string
-  ): Promise<vscode.Location> {
+  ): Promise<vscode.Location | null> {
     const searchPaths = Proto3Import.getImportedFilePathsOnDocument(document);
 
     const files = [document.uri.fsPath, ...(await fg(searchPaths))];
-
     for (const file of files) {
       const uri = vscode.Uri.file(file.toString());
       const data = fs.readFileSync(file.toString());
@@ -107,10 +103,8 @@ export class Proto3DefinitionProvider implements vscode.DefinitionProvider {
         }
       }
     }
-    return new vscode.Location(
-      vscode.Uri.file("."),
-      new vscode.Range(new vscode.Position(0, 0), new vscode.Position(0, 0))
-    );
+
+    return null;
   }
 
   private async findImportDefinition(
